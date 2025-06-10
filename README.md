@@ -487,6 +487,9 @@
       padding: 40px;
       color: #666;
       font-size: 1.1rem;
+      
+      <div class="full-screen">
+    <div class="container">
     }
   </style>
 </head>
