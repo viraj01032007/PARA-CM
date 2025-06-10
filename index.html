@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+<title>PARA-CO - Find Your Coliving Space</title>
+<meta name="description" content="Discover fully-furnished, beautifully designed coliving spaces in Panvel, Nerul, Kharghar, and Vashi. Find your perfect home with PARA-CO.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Georgia:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Container for consistent spacing */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 5vw, 3rem);
+}
+
+/* Navigation */
+.navbar {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: clamp(60px, 8vh, 80px);
+  padding: 0 clamp(1rem, 5vw, 3rem);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  color: #5e2ca5;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2rem);
+  list-style: none;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: #5e2ca5;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
+  cursor: pointer;
+  color: #333;
+  padding: 0.5rem;
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: clamp(60px, 8vh, 80px);
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+  padding: 1rem clamp(1rem, 5vw, 3rem);
+}
+
+.mobile-nav.active {
+  display: block;
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 1rem 0;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+}
+
+.mobile-nav a:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav a:hover {
+  color: #5e2ca5;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: white;
+  padding: clamp(2rem, 5vh, 4rem) 0;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 5vw, 3rem);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  font-weight: 700;
+  margin-bottom: clamp(1rem, 3vh, 2rem);
+  max-width: 700px;
+  line-height: 1.1;
+}
+
+.hero p {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  margin-bottom: clamp(2rem, 5vh, 3rem);
+  max-width: 600px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.search-container {
+  display: flex;
+  gap: clamp(0.75rem, 2vw, 1rem);
+  margin-bottom: clamp(2rem, 5vh, 3rem);
+  max-width: 600px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: min(250px, 100%);
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.25rem);
+  border: none;
+  border-radius: 8px;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  outline: none;
+  font-family: inherit;
+}
+
+.search-btn {
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.search-btn:hover {
+  background: #0056b3;
+}
+
+.founder-info {
+  position: absolute;
+  bottom: clamp(1rem, 3vh, 2rem);
+  right: clamp(1rem, 5vw, 3rem);
+  text-align: right;
+  font-family: 'Georgia', serif;
+}
+
+.founder-title {
+  font-size: clamp(0.625rem, 1.5vw, 0.75rem);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  margin-bottom: 0.25rem;
+}
+
+.founder-name {
+  font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Section spacing */
+.section {
+  padding: clamp(3rem, 8vh, 6rem) 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 6vh, 4rem);
+}
+
+.section-header h2 {
+  font-size: clamp(1.75rem, 6vw, 2.5rem);
+  font-weight: 700;
+  color: #333;
+  margin-bottom: clamp(0.75rem, 2vh, 1rem);
+  line-height: 1.2;
+}
+
+.section-header p {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Furniture Showcase */
+.furniture-section {
+  background: #f8f9fa;
+}
+
+.furniture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.furniture-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.furniture-card:hover {
+  transform: translateY(-5px);
+}
+
+.furniture-card img {
+  width: 100%;
+  height: clamp(200px, 30vw, 280px);
+  object-fit: cover;
+}
+
+.card-content {
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+.card-content h3 {
+  font-size: clamp(1.125rem, 3vw, 1.375rem);
+  font-weight: 600;
+  margin-bottom: clamp(0.75rem, 2vh, 1rem);
+  color: #333;
+  line-height: 1.3;
+}
+
+.card-content p {
+  color: #666;
+  line-height: 1.6;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+/* City Selector */
+.city-section {
+  background: white;
+}
+
+.city-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(2rem, 5vh, 3rem);
+  gap: clamp(0.75rem, 2vw, 1rem);
+}
+
+.city-scroll {
+  display: flex;
+  gap: clamp(0.75rem, 2vw, 1rem);
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  flex: 1;
+  margin: 0 clamp(0.5rem, 2vw, 1rem);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.city-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.city-button {
+  padding: clamp(0.625rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+  border: none;
+  border-radius: 25px;
+  background: #e9ecef;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  font-family: inherit;
+}
+
+.city-button.active {
+  background: #5e2ca5;
+  color: white;
+  box-shadow: 0 2px 8px rgba(94, 44, 165, 0.3);
+}
+
+.city-button:hover:not(.active) {
+  background: #dee2e6;
+}
+
+.arrow-btn {
+  padding: clamp(0.5rem, 2vw, 0.75rem);
+  border: none;
+  background: #f8f9fa;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  transition: background 0.3s ease;
+  min-width: clamp(36px, 8vw, 44px);
+  min-height: clamp(36px, 8vw, 44px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-btn:hover {
+  background: #e9ecef;
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+  gap: clamp(1.5rem, 4vw, 2rem);
+  margin-top: clamp(1.5rem, 4vh, 2.5rem);
+}
+
+.property-card {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 15px;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.property-card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+.property-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(0.75rem, 2vh, 1rem);
+  gap: clamp(0.75rem, 2vw, 1rem);
+  flex-wrap: wrap;
+}
+
+.property-name {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 600;
+  color: #333;
+  line-height: 1.3;
+  flex: 1;
+  min-width: 150px;
+}
+
+.property-price {
+  font-size: clamp(1.125rem, 3vw, 1.375rem);
+  font-weight: 700;
+  color: #5e2ca5;
+  white-space: nowrap;
+}
+
+.property-type {
+  color: #666;
+  margin-bottom: clamp(1rem, 3vh, 1.25rem);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.view-details-btn {
+  width: 100%;
+  padding: clamp(0.75rem, 2vh, 1rem);
+  background: #5e2ca5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-family: inherit;
+}
+
+.view-details-btn:hover {
+  background: #4a1f85;
+  transform: translateY(-1px);
+}
+
+/* Team Section */
+.team-section {
+  background: #f8f9fa;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  margin-top: clamp(2rem, 5vh, 3rem);
+}
+
+.team-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card img {
+  width: 100%;
+  height: clamp(250px, 35vw, 320px);
+  object-fit: cover;
+}
+
+.team-info {
+  padding: clamp(1.25rem, 4vw, 1.75rem);
+}
+
+.team-name {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.team-role {
+  color: #666;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  position: fixed;
+  bottom: clamp(1rem, 3vh, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
+  width: clamp(50px, 12vw, 60px);
+  height: clamp(50px, 12vw, 60px);
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-btn svg {
+  width: clamp(25px, 6vw, 30px);
+  height: clamp(25px, 6vw, 30px);
+  fill: white;
+}
+
+.no-properties {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: clamp(2rem, 5vh, 3rem);
+  color: #666;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  .city-controls {
+    flex-direction: column;
+    gap: clamp(1rem, 3vh, 1.5rem);
+  }
+
+  .city-scroll {
+    margin: 0;
+  }
+
+  .founder-info {
+    position: relative;
+    text-align: center;
+    margin-top: clamp(2rem, 5vh, 3rem);
+    bottom: auto;
+    right: auto;
+  }
+
+  .property-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .property-price {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    background-attachment: scroll;
+  }
+
+  .furniture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .properties-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    min-height: auto;
+    padding: clamp(3rem, 8vh, 5rem) 0;
+  }
+
+  .founder-info {
+    position: relative;
+    text-align: center;
+    margin-top: 2rem;
+    bottom: auto;
+    right: auto;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  .nav-container,
+  .hero-content {
+    max-width: 1600px;
+  }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .furniture-card img,
+  .team-card img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Print styles */
+@media print {
+  .whatsapp-btn,
+  .mobile-menu-btn,
+  .mobile-nav {
+    display: none !important;
+  }
+
+  .hero {
+    background: #f8f9fa;
+    color: #333;
+    background-image: none;
+  }
+
+  .navbar {
+    position: static;
+    box-shadow: none;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero {
+    background-attachment: scroll;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background: #1a1a1a;
+    border-bottom: 1px solid #333;
+  }
+
+  .logo,
+  .nav-links a,
+  .mobile-nav a {
+    color: #fff;
+  }
+
+  .mobile-nav {
+    background: #1a1a1a;
+  }
+}
+
+/* Focus states for accessibility */
+.search-btn:focus,
+.city-button:focus,
+.arrow-btn:focus,
+.view-details-btn:focus,
+.mobile-menu-btn:focus {
+  outline: 2px solid #5e2ca5;
+  outline-offset: 2px;
+}
+
+.nav-links a:focus,
+.mobile-nav a:focus {
+  outline: 2px solid #5e2ca5;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">PARA-CO</div>
+    <ul class="nav-links">
+      <li><a href="#explore">Explore</a></li>
+      <li><a href="#list">List your space</a></li>
+      <li><a href="#help">Help</a></li>
+    </ul>
+    <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#explore">Explore</a>
+    <a href="#list">List your space</a>
+    <a href="#help">Help</a>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h1>Find Your Coliving Space</h1>
+    <p>Discover fully-furnished, beautifully designed spaces to live and work in comfort.</p>
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search for locations..." id="searchInput" aria-label="Search locations">
+      <button class="search-btn" onclick="handleSearch()" aria-label="Search">
+        🔍 Search
+      </button>
+    </div>
+  </div>
+  <div class="founder-info">
+    <div class="founder-title">Founder & CEO</div>
+    <div class="founder-name">Viraj Rajput</div>
+  </div>
+</section>
+
+<section class="section furniture-section" id="explore">
+  <div class="container">
+    <div class="furniture-grid">
+      <div class="furniture-card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Modern Living Room" loading="lazy">
+        <div class="card-content">
+          <h3>Modern Living Room</h3>
+          <p>Spacious room with natural light and minimalist furniture style.</p>
+        </div>
+      </div>
+      <div class="furniture-card">
+        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Cozy Bedroom" loading="lazy">
+        <div class="card-content">
+          <h3>Cozy Bedroom</h3>
+          <p>A peaceful, cozy space with warm tones and soft bedding.</p>
+        </div>
+      </div>
+      <div class="furniture-card">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Stylish Dining Area" loading="lazy">
+        <div class="card-content">
+          <h3>Stylish Dining Area</h3>
+          <p>Elegant dining with modern table, chairs and ambient lighting.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section city-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Available in Cities</h2>
+    </div>
+    <div class="city-controls">
+      <button class="arrow-btn" onclick="scrollCities(-1)" aria-label="Previous cities">←</button>
+      <div class="city-scroll" id="cityScroll" role="tablist">
+        <button class="city-button active" onclick="selectCity('Panvel', this)" role="tab" aria-selected="true">Panvel</button>
+        <button class="city-button" onclick="selectCity('Nerul', this)" role="tab" aria-selected="false">Nerul</button>
+        <button class="city-button" onclick="selectCity('Kharghar', this)" role="tab" aria-selected="false">Kharghar</button>
+        <button class="city-button" onclick="selectCity('Vashi', this)" role="tab" aria-selected="false">Vashi</button>
+      </div>
+      <button class="arrow-btn" onclick="scrollCities(1)" aria-label="Next cities">→</button>
+    </div>
+    <div class="properties-grid" id="propertiesGrid" role="tabpanel" aria-live="polite">
+      <!-- Properties will be loaded here -->
+    </div>
+  </div>
+</section>
+
+<section class="section team-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Meet Our Team</h2>
+      <p>The passionate individuals behind PARA-CO</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Shreyansh Chaubey" loading="lazy">
+        <div class="team-info">
+          <div class="team-name">Shreyansh Chaubey</div>
+          <div class="team-role">Operations Head</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Jayesh Bhosle" loading="lazy">
+        <div class="team-info">
+          <div class="team-name">Jayesh Bhosle</div>
+          <div class="team-role">Technical Lead</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Viraj Rajput" loading="lazy">
+        <div class="team-info">
+          <div class="team-name">Viraj Rajput</div>
+          <div class="team-role">Founder & CEO</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Priya Mehta" loading="lazy">
+        <div class="team-info">
+          <div class="team-name">Priya Mehta</div>
+          <div class="team-role">Marketing Manager</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" alt="Ankit Sharma" loading="lazy">
+        <div class="team-info">
+          <div class="team-name">Ankit Sharma</div>
+          <div class="team-role">Customer Relations</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/919423421979" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contact us on WhatsApp">
+  <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
+  </svg>
+</a>
+
+<script>
+// Properties data
+const propertiesData = {
+  "Panvel": [
+    { name: "Sunrise Residency", type: "2 BHK Apartment", price: "₹15,000/month" },
+    { name: "Green Meadows", type: "1 BHK Studio", price: "₹10,000/month" }
+  ],
+  "Nerul": [
+    { name: "Ocean View Towers", type: "3 BHK Apartment", price: "₹25,000/month" },
+    { name: "Palm Residency", type: "2 BHK Apartment", price: "₹18,000/month" }
+  ],
+  "Kharghar": [
+    { name: "Lakeview Heights", type: "1 BHK Studio", price: "₹12,000/month" },
+    { name: "Central Park Homes", type: "2 BHK Apartment", price: "₹16,000/month" }
+  ],
+  "Vashi": [
+    { name: "Skyline Residency", type: "3 BHK Apartment", price: "₹22,000/month" },
+    { name: "Palm Grove", type: "1 BHK Studio", price: "₹11,000/month" }
+  ]
+};
+
+let currentCity = "Panvel";
+
+// Search functionality
+function handleSearch() {
+  const searchValue = document.getElementById('searchInput').value.trim();
+  if (searchValue) {
+    alert(`Searching for: ${searchValue}`);
+    // Implement actual search functionality here
+  }
+}
+
+// Enter key for search
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    handleSearch();
+  }
+});
+
+// City selection with accessibility
+function selectCity(cityName, buttonElement) {
+  currentCity = cityName;
+  
+  // Update active button and aria states
+  const allButtons = document.querySelectorAll('.city-button');
+  allButtons.forEach(btn => {
+    btn.classList.remove('active');
+    btn.setAttribute('aria-selected', 'false');
+  });
+  
+  buttonElement.classList.add('active');
+  buttonElement.setAttribute('aria-selected', 'true');
+  
+  // Load properties for selected city
+  loadProperties(cityName);
+}
+
+// Load properties for a city
+function loadProperties(cityName) {
+  const propertiesGrid = document.getElementById('propertiesGrid');
+  const properties = propertiesData[cityName] || [];
+  
+  if (properties.length === 0) {
+    propertiesGrid.innerHTML = `
+      <div class="no-properties">
+        No properties available in ${cityName}.
+      </div>
+    `;
+    return;
+  }
+  
+  propertiesGrid.innerHTML = properties.map(property => `
+    <div class="property-card">
+      <div class="property-header">
+        <div class="property-name">${property.name}</div>
+        <div class="property-price">${property.price}</div>
+      </div>
+      <div class="property-type">
+        📍 ${property.type}
+      </div>
+      <button class="view-details-btn" onclick="viewPropertyDetails('${property.name}')">View Details</button>
+    </div>
+  `).join('');
+}
+
+// View property details
+function viewPropertyDetails(propertyName) {
+  alert(`Viewing details for: ${propertyName}`);
+  // Implement actual property details functionality here
+}
+
+// Scroll cities
+function scrollCities(direction) {
+  const cityScroll = document.getElementById('cityScroll');
+  const scrollAmount = 200;
+  cityScroll.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
+
+// Mobile menu toggle with accessibility
+function toggleMobileMenu() {
+  const mobileNav = document.getElementById('mobileNav');
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const isActive = mobileNav.classList.contains('active');
+  
+  if (isActive) {
+    mobileNav.classList.remove('active');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  } else {
+    mobileNav.classList.add('active');
+    menuBtn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize with default city
+  loadProperties(currentCity);
+  
+  // Mobile menu toggle
+  document.querySelector('.mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(e) {
+    const mobileNav = document.getElementById('mobileNav');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    
+    if (!mobileNav.contains(e.target) && !menuBtn.contains(e.target) && mobileNav.classList.contains('active')) {
+      toggleMobileMenu();
+    }
+  });
+  
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        // Close mobile menu if open
+        const mobileNav = document.getElementById('mobileNav');
+        if (mobileNav.classList.contains('active')) {
+          toggleMobileMenu();
+        }
+        
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+  
+  // Keyboard navigation for city buttons
+  document.querySelectorAll('.city-button').forEach((button, index, buttons) => {
+    button.addEventListener('keydown', function(e) {
+      let nextIndex;
+      
+      switch(e.key) {
+        case 'ArrowLeft':
+          e.preventDefault();
+          nextIndex = index > 0 ? index - 1 : buttons.length - 1;
+          buttons[nextIndex].focus();
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          nextIndex = index < buttons.length - 1 ? index + 1 : 0;
+          buttons[nextIndex].focus();
+          break;
+        case 'Home':
+          e.preventDefault();
+          buttons[0].focus();
+          break;
+        case 'End':
+          e.preventDefault();
+          buttons[buttons.length - 1].focus();
+          break;
+      }
+    });
+  });
+});
+
+// Handle orientation changes and resize events
+window.addEventListener('orientationchange', function() {
+  // Small delay to allow for orientation change to complete
+  setTimeout(() => {
+    // Recalculate any size-dependent elements if needed
+    window.dispatchEvent(new Event('resize'));
+  }, 100);
+});
+
+// Handle window resize for responsive adjustments
+window.addEventListener('resize', function() {
+  // Close mobile menu on resize to larger screen
+  if (window.innerWidth > 768) {
+    const mobileNav = document.getElementById('mobileNav');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    if (mobileNav.classList.contains('active')) {
+      mobileNav.classList.remove('active');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+  }
+});
+
+// Performance optimization - defer non-critical JavaScript
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(() => {
+    // Add any non-critical functionality here
+    console.log('PARA-CO website loaded successfully');
+  });
+}
+</script>
+
+</body>
+</html>
