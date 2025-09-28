@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Rating from '@/components/shared/rating';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { MapPin } from 'lucide-react';
+import { IndianRupee, MapPin } from 'lucide-react';
 
 interface ConsultantCardProps {
   consultant: Consultant;
@@ -39,8 +39,9 @@ export default function ConsultantCard({ consultant }: ConsultantCardProps) {
             <MapPin className="w-4 h-4 mr-1.5" />
             <span>{consultant.location}</span>
           </div>
-          <div className="text-right font-bold text-lg mt-4 flex-grow flex items-end justify-end">
-            ₹{consultant.rate}<span className="text-sm font-normal text-muted-foreground">/hr</span>
+          <div className="text-right font-bold text-lg mt-4 flex-grow flex items-center justify-end">
+            <IndianRupee className="w-5 h-5 mr-1" />
+            {consultant.rate}<span className="text-sm font-normal text-muted-foreground">/hr</span>
           </div>
         </CardContent>
       </Card>

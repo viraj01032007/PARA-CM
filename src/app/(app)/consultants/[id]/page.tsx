@@ -81,7 +81,7 @@ export default function ConsultantProfilePage({ params }: Props) {
             </div>
              <div className="flex items-center gap-3">
               <IndianRupee className="w-5 h-5 text-primary" />
-              <span>₹{consultant.rate} / hour</span>
+              <span>{consultant.rate} / hour</span>
             </div>
           </CardContent>
         </Card>

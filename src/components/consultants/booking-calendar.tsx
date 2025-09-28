@@ -6,6 +6,7 @@ import { Calendar } from '@/components/ui/calendar';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
+import { IndianRupee } from 'lucide-react';
 
 const timeSlots = [
   '09:00 AM', '10:00 AM', '11:00 AM', '01:00 PM', '02:00 PM', '03:00 PM'
@@ -71,7 +72,7 @@ export default function BookingCalendar({ rate }: BookingCalendarProps) {
       <CardFooter className="flex-col items-stretch gap-3">
         <div className="flex justify-between items-center font-bold">
             <span>Total:</span>
-            <span>₹{rate}/hr</span>
+            <span className='flex items-center'><IndianRupee className="w-5 h-5 mr-1" />{rate}/hr</span>
         </div>
         <Button onClick={handleBooking} disabled={!date || !selectedTime} className="w-full">
           Book Now
