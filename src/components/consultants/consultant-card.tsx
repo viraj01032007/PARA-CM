@@ -15,7 +15,7 @@ export default function ConsultantCard({ consultant }: ConsultantCardProps) {
   const placeholderImage = PlaceHolderImages.find(img => img.id === consultant.imageId);
 
   return (
-    <Link href={`/consultants/${consultant.id}`}>
+    <Link href={`/consultants/${consultant.id}`} className="h-full block">
       <Card className="overflow-hidden h-full group hover:shadow-xl transition-shadow duration-300">
         <div className="relative">
           <Image
@@ -28,7 +28,7 @@ export default function ConsultantCard({ consultant }: ConsultantCardProps) {
           />
           <Badge className="absolute top-3 right-3" variant="secondary">{consultant.category}</Badge>
         </div>
-        <CardContent className="p-4">
+        <CardContent className="p-4 flex flex-col">
           <h3 className="font-bold text-lg font-headline">{consultant.name}</h3>
           <p className="text-sm text-primary font-medium">{consultant.specialty}</p>
           <div className="flex items-center gap-2 mt-2">
@@ -39,7 +39,7 @@ export default function ConsultantCard({ consultant }: ConsultantCardProps) {
             <MapPin className="w-4 h-4 mr-1.5" />
             <span>{consultant.location}</span>
           </div>
-          <div className="text-right font-bold text-lg mt-4">
+          <div className="text-right font-bold text-lg mt-4 flex-grow flex items-end justify-end">
             ${consultant.rate}<span className="text-sm font-normal text-muted-foreground">/hr</span>
           </div>
         </CardContent>
