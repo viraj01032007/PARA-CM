@@ -40,7 +40,7 @@ export default function ConsultantCard({ consultant }: ConsultantCardProps) {
             <span>{consultant.location}</span>
           </div>
           <div className="text-right font-bold text-lg mt-4 flex-grow flex items-end justify-end">
-            ${consultant.rate}<span className="text-sm font-normal text-muted-foreground">/hr</span>
+            ₹{consultant.rate}<span className="text-sm font-normal text-muted-foreground">/hr</span>
           </div>
         </CardContent>
       </Card>

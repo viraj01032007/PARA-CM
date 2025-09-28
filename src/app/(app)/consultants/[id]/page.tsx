@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Rating from '@/components/shared/rating';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Briefcase, CalendarDays, Clock, DollarSign, Languages, Star, Users } from 'lucide-react';
+import { Briefcase, CalendarDays, IndianRupee, Languages } from 'lucide-react';
 import BookingCalendar from '@/components/consultants/booking-calendar';
 
 type Props = {
@@ -80,8 +80,8 @@ export default function ConsultantProfilePage({ params }: Props) {
               <span>Available on {consultant.availability.join(' & ')}</span>
             </div>
              <div className="flex items-center gap-3">
-              <DollarSign className="w-5 h-5 text-primary" />
-              <span>${consultant.rate} / hour</span>
+              <IndianRupee className="w-5 h-5 text-primary" />
+              <span>₹{consultant.rate} / hour</span>
             </div>
           </CardContent>
         </Card>

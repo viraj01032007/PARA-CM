@@ -71,7 +71,7 @@ export default function BookingCalendar({ rate }: BookingCalendarProps) {
       <CardFooter className="flex-col items-stretch gap-3">
         <div className="flex justify-between items-center font-bold">
             <span>Total:</span>
-            <span>${rate}/hr</span>
+            <span>₹{rate}/hr</span>
         </div>
         <Button onClick={handleBooking} disabled={!date || !selectedTime} className="w-full">
           Book Now
