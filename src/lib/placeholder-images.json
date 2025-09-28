@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "1",
+      "description": "A friendly and professional nutritionist smiling.",
+      "imageUrl": "https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc1OTA2NDc1MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "2",
+      "description": "A confident startup coach in a modern office.",
+      "imageUrl": "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYW4lMjBvZmZpY2V8ZW58MHx8fHwxNzU5MDI4MjYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man office"
+    },
+    {
+      "id": "3",
+      "description": "A female financial advisor reviewing documents.",
+      "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMGJ1c2luZXNzfGVufDB8fHx8MTc1ODk3MzE5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman business"
+    },
+    {
+      "id": "4",
+      "description": "A male career counselor in a virtual meeting.",
+      "imageUrl": "https://images.unsplash.com/photo-1521696411601-2a1393e49f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFuJTIwcmVtb3RlfGVufDB8fHx8MTc1OTA4MzIwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man remote"
+    },
+    {
+      "id": "5",
+      "description": "A female fitness trainer in workout gear.",
+      "imageUrl": "https://images.unsplash.com/photo-1445384763658-0400939829cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b21hbiUyMGZpdG5lc3N8ZW58MHx8fHwxNzU4OTc5MTk0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman fitness"
+    },
+    {
+      "id": "6",
+      "description": "A male marketing expert presenting ideas.",
+      "imageUrl": "https://images.unsplash.com/photo-1563807893646-b6598a2b6fdc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYW4lMjBwcmVzZW50YXRpb258ZW58MHx8fHwxNzU5MDgzMjAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man presentation"
+    },
+    {
+      "id": "7",
+      "description": "A female life coach having a warm conversation.",
+      "imageUrl": "https://images.unsplash.com/photo-1588346985272-e31baa849baa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3b21hbiUyMHRhbGtpbmd8ZW58MHx8fHwxNzU5MDgzMjAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman talking"
+    },
+    {
+      "id": "8",
+      "description": "A male AI consultant working with complex diagrams.",
+      "imageUrl": "https://images.unsplash.com/photo-1663743629961-c6134ef1afc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYW4lMjB0ZWNofGVufDB8fHx8MTc1OTA0MTgxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man tech"
+    },
+    {
+      "id": "hero",
+      "description": "A diverse group of professionals in a collaborative meeting.",
+      "imageUrl": "https://images.unsplash.com/photo-1590650046871-92c887180603?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtJTIwbWVldGluZ3xlbnwwfHx8fDE3NTkwMTI2NjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team meeting"
+    }
+  ]
 }

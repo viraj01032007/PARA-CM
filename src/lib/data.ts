@@ -1,0 +1,188 @@
+import type { Consultant, Category, Review } from '@/types';
+
+const reviews: Review[] = [
+  {
+    id: '1',
+    author: 'Alice Johnson',
+    avatarUrl: 'https://picsum.photos/seed/alice/40/40',
+    rating: 5,
+    comment: 'Dr. Evans was incredibly helpful and provided clear, actionable advice. I feel much more confident about my health journey.',
+    date: '2023-09-15',
+  },
+  {
+    id: '2',
+    author: 'Bob Williams',
+    avatarUrl: 'https://picsum.photos/seed/bob/40/40',
+    rating: 4,
+    comment: 'A great session that gave me a new perspective on my fitness goals.',
+    date: '2023-09-12',
+  },
+   {
+    id: '3',
+    author: 'Charlie Brown',
+    avatarUrl: 'https://picsum.photos/seed/charlie/40/40',
+    rating: 5,
+    comment: 'Mindblowing session. I see a clear path for my startup now.',
+    date: '2023-10-01',
+  },
+  {
+    id: '4',
+    author: 'Diana Prince',
+    avatarUrl: 'https://picsum.photos/seed/diana/40/40',
+    rating: 5,
+    comment: 'Maria helped me organize my finances perfectly. Highly recommended!',
+    date: '2023-09-28',
+  },
+];
+
+
+export const consultants: Consultant[] = [
+  {
+    id: '1',
+    name: 'Dr. Emily Evans',
+    specialty: 'Nutritionist',
+    category: 'Health',
+    location: 'New York, NY',
+    bio: 'Dr. Emily Evans is a registered dietitian with over 10 years of experience helping clients achieve their health goals through personalized nutrition plans. She believes in a holistic approach to wellness.',
+    experience: 10,
+    languages: ['English', 'Spanish'],
+    rate: 150,
+    rating: 4.9,
+    reviewCount: 89,
+    imageId: '1',
+    reviews: reviews.slice(0,2),
+    availability: ['Weekdays']
+  },
+  {
+    id: '2',
+    name: 'John Smith',
+    specialty: 'Startup Coach',
+    category: 'Business',
+    location: 'San Francisco, CA',
+    bio: 'John is a seasoned entrepreneur and startup mentor who has successfully launched three tech companies. He specializes in early-stage strategy, fundraising, and product-market fit.',
+    experience: 15,
+    languages: ['English'],
+    rate: 250,
+    rating: 4.8,
+    reviewCount: 124,
+    imageId: '2',
+    reviews: [reviews[2]],
+    availability: ['Weekdays', 'Weekends']
+  },
+  {
+    id: '3',
+    name: 'Maria Garcia',
+    specialty: 'Financial Advisor',
+    category: 'Business',
+    location: 'Miami, FL',
+    bio: 'With a background in investment banking, Maria now helps individuals and small businesses manage their finances, plan for retirement, and make smart investment decisions.',
+    experience: 12,
+    languages: ['English', 'Spanish'],
+    rate: 200,
+    rating: 4.9,
+    reviewCount: 95,
+    imageId: '3',
+    reviews: [reviews[3]],
+    availability: ['Weekends']
+  },
+  {
+    id: '4',
+    name: 'David Chen',
+    specialty: 'Career Counselor',
+    category: 'Personal',
+    location: 'Remote',
+    bio: 'David helps professionals navigate career transitions, identify their strengths, and build a fulfilling career path. He has a background in HR and talent acquisition.',
+    experience: 8,
+    languages: ['English', 'Mandarin'],
+    rate: 120,
+    rating: 4.7,
+    reviewCount: 76,
+    imageId: '4',
+    reviews: [],
+    availability: ['Weekdays']
+  },
+  {
+    id: '5',
+    name: 'Sarah Lee',
+    specialty: 'Fitness Trainer',
+    category: 'Health',
+    location: 'Los Angeles, CA',
+    bio: 'Sarah is a certified personal trainer and yoga instructor with a passion for helping people discover the joy of movement. She creates customized workout plans for all fitness levels.',
+    experience: 7,
+    languages: ['English'],
+    rate: 90,
+    rating: 4.9,
+    reviewCount: 150,
+    imageId: '5',
+    reviews: [],
+    availability: ['Weekdays', 'Weekends']
+  },
+  {
+    id: '6',
+    name: 'Michael Brown',
+    specialty: 'Marketing Expert',
+    category: 'Business',
+    location: 'Chicago, IL',
+    bio: 'Michael has over a decade of experience in digital marketing, helping brands grow their online presence through SEO, content marketing, and social media strategy.',
+    experience: 11,
+    languages: ['English'],
+    rate: 180,
+    rating: 4.8,
+    reviewCount: 110,
+    imageId: '6',
+    reviews: [],
+    availability: ['Weekdays']
+  },
+  {
+    id: '7',
+    name: 'Jessica Williams',
+    specialty: 'Life Coach',
+    category: 'Personal',
+    location: 'Remote',
+    bio: 'Jessica empowers her clients to overcome limiting beliefs, set meaningful goals, and create a life they love. She focuses on mindfulness and positive psychology.',
+    experience: 6,
+    languages: ['English'],
+    rate: 130,
+    rating: 4.9,
+    reviewCount: 92,
+    imageId: '7',
+    reviews: [],
+    availability: ['Weekends']
+  },
+  {
+    id: '8',
+    name: 'Kevin Martinez',
+    specialty: 'AI Consultant',
+    category: 'Tech',
+    location: 'Austin, TX',
+    bio: 'A former software engineer at a FAANG company, Kevin now advises businesses on implementing AI and machine learning solutions to optimize their operations and drive innovation.',
+    experience: 9,
+    languages: ['English'],
+    rate: 300,
+    rating: 5.0,
+    reviewCount: 65,
+    imageId: '8',
+    reviews: [],
+    availability: ['Weekdays', 'Weekends']
+  },
+];
+
+export const featuredConsultants = consultants.slice(0, 4);
+
+export const testimonials = [
+  {
+    name: 'Alex Martinez',
+    title: 'Startup Founder',
+    quote: 'Working with John Smith was a game-changer for my company. His insights into market strategy were invaluable.',
+  },
+  {
+    name: 'Samantha Ray',
+    title: 'Marketing Manager',
+    quote: "Dr. Evans' nutritional plan was easy to follow and has dramatically improved my energy levels. I've never felt better!",
+  },
+  {
+    name: 'Ben Carter',
+    title: 'Software Developer',
+    quote: 'The career advice I received from David Chen was practical and helped me land my dream job. Highly recommend!',
+  },
+];
