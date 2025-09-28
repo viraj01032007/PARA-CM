@@ -4,6 +4,7 @@ import {
   Lightbulb,
   Sparkles,
   User,
+  ArrowRight
 } from 'lucide-react';
 
 import { Card, CardContent } from '@/components/ui/card';
@@ -12,12 +13,13 @@ import { featuredConsultants, testimonials } from '@/lib/data';
 import ConsultantCard from '@/components/consultants/consultant-card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const categories = [
-  { name: 'Health', icon: <HeartPulse className="w-8 h-8" />, href: '/search?category=Health' },
-  { name: 'Business', icon: <Briefcase className="w-8 h-8" />, href: '/search?category=Business' },
-  { name: 'Personal Growth', icon: <User className="w-8 h-8" />, href: '/search?category=Personal' },
-  { name: 'Tech', icon: <Lightbulb className="w-8 h-8" />, href: '/search?category=Tech' },
+  { name: 'Health', icon: <HeartPulse className="w-8 h-8" />, href: '/categories/health' },
+  { name: 'Business', icon: <Briefcase className="w-8 h-8" />, href: '/categories/business' },
+  { name: 'Personal Growth', icon: <User className="w-8 h-8" />, href: '/categories/personal' },
+  { name: 'Tech', icon: <Lightbulb className="w-8 h-8" />, href: '/categories/tech' },
 ];
 
 export default function Home() {
@@ -51,6 +53,13 @@ export default function Home() {
                 </Card>
               </Link>
             ))}
+          </div>
+           <div className="text-center mt-12">
+            <Button asChild variant="outline">
+              <Link href="/search">
+                Browse All Categories <ArrowRight className="ml-2" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
