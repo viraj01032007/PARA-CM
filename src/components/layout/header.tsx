@@ -11,13 +11,13 @@ export default function Header() {
           <span className="font-bold text-lg font-headline">ConnectSphere Consult</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-          <Link href="/#categories" className="text-muted-foreground transition-colors hover:text-foreground">
+          <Link href="/categories" className="text-muted-foreground transition-colors hover:text-foreground">
             Categories
           </Link>
-          <Link href="/#featured" className="text-muted-foreground transition-colors hover:text-foreground">
+          <Link href="/search" className="text-muted-foreground transition-colors hover:text-foreground">
             Consultants
           </Link>
-          <Link href="/#testimonials" className="text-muted-foreground transition-colors hover:text-foreground">
+          <Link href="/testimonials" className="text-muted-foreground transition-colors hover:text-foreground">
             Testimonials
           </Link>
         </nav>

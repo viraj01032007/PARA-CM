@@ -14,13 +14,8 @@ import ConsultantCard from '@/components/consultants/consultant-card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-
-const categories = [
-  { name: 'Health', icon: <HeartPulse className="w-8 h-8" />, href: '/categories/health' },
-  { name: 'Business', icon: <Briefcase className="w-8 h-8" />, href: '/categories/business' },
-  { name: 'Personal Growth', icon: <User className="w-8 h-8" />, href: '/categories/personal' },
-  { name: 'Tech', icon: <Lightbulb className="w-8 h-8" />, href: '/categories/tech' },
-];
+import CategoriesSection from '@/components/home/categories-section';
+import TestimonialsSection from '@/components/home/testimonials-section';
 
 export default function Home() {
   return (
@@ -37,32 +32,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="categories" className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold text-center mb-10 font-headline">
-            Explore Consultant Categories
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {categories.map((category) => (
-              <Link href={category.href} key={category.name}>
-                 <Card className="text-center p-6 flex flex-col items-center justify-center hover:shadow-lg hover:-translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer h-full">
-                  <div className="p-4 bg-accent/50 rounded-full mb-4 text-primary">
-                    {category.icon}
-                  </div>
-                  <h3 className="font-semibold text-lg">{category.name}</h3>
-                </Card>
-              </Link>
-            ))}
-          </div>
-           <div className="text-center mt-12">
-            <Button asChild variant="outline">
-              <Link href="/search">
-                Browse All Categories <ArrowRight className="ml-2" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CategoriesSection />
 
       <section id="featured" className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4 md:px-6">
@@ -80,34 +50,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="testimonials" className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold text-center mb-10 font-headline">
-            Success Stories
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-6">
-                <CardContent className="p-0">
-                  <blockquote className="text-muted-foreground mb-4">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  <div className="flex items-center">
-                    <Avatar className="h-10 w-10 mr-4">
-                      <AvatarImage src={`https://picsum.photos/seed/${testimonial.name}/40/40`} alt={testimonial.name} />
-                      <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <p className="font-semibold">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.title}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection />
     </div>
   );
 }
