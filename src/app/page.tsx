@@ -1,3 +1,5 @@
+"use client";
+
 import { Sparkles } from 'lucide-react';
 import FilterBar from '@/components/home/filter-bar';
 import { featuredConsultants } from '@/lib/data';
